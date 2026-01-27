@@ -23,7 +23,6 @@
       position: relative;
     }
 
-    /* Dark overlay for readability */
     .hero-bg::before {
       content: '';
       position: absolute;
@@ -34,7 +33,6 @@
       background-color: rgba(0, 0, 0, 0.55);
     }
 
-    /* Fade-up animation (already used) */
     .fade-in-up { animation: fadeInUp 1.5s ease-out forwards; opacity: 0; }
     .fade-in-up-delay { animation: fadeInUp 1.5s ease-out 0.5s forwards; opacity: 0; }
 
@@ -43,7 +41,17 @@
       to { transform: translateY(0); opacity: 1; }
     }
 
-    /* About Section Animations */
+    /* ✅ Simple fade-in animation for experience cards */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+
     @keyframes fadeInLeft {
       from { opacity: 0; transform: translateX(-40px); }
       to { opacity: 1; transform: translateX(0); }
@@ -86,7 +94,7 @@
         <ul class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8 text-lg w-full md:w-auto">
           <li><a href="#home" data-page-target="home" class="nav-link hover:text-blue-500 transition duration-300 py-2">Home</a></li>
           <li><a href="#about" data-page-target="about" class="nav-link hover:text-blue-500 transition duration-300 py-2">About</a></li>
-          <li><a href="Resume_SJ_.pdf" target="_blank" rel="noopener noreferrer" class="nav-link hover:text-blue-500 transition duration-300 py-2">Resume</a></li>
+          <li><a href="Swapnil_Joshi_.pdf" target="_blank" rel="noopener noreferrer" class="nav-link hover:text-blue-500 transition duration-300 py-2">Resume</a></li>
           <li><a href="#experience" data-page-target="experience" class="nav-link hover:text-blue-500 transition duration-300 py-2">Experience</a></li>
           <li><a href="#projects" data-page-target="projects" class="nav-link hover:text-blue-500 transition duration-300 py-2">Projects</a></li>
           <li><a href="#contact" data-page-target="contact" class="nav-link hover:text-blue-500 transition duration-300 py-2">Contact</a></li>
@@ -129,8 +137,244 @@
         </div>
       </section>
 
-      <!-- (Rest of your content remains exactly as in your version) -->
-      <!-- Experience, Projects, Contact sections unchanged -->
+      <!-- Experience -->
+      <section id="experience" data-page="experience" class="content-section py-20 opacity-0">
+        <div class="container mx-auto px-4 py-8 md:py-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">EXPERIENCE</h2>
+
+          <div class="space-y-12 group">
+
+            <!-- CARD 1 -->
+            <div class="experience-card bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-70 hover:opacity-100">
+              <div class="flex items-center space-x-3 mb-3">
+                <i class="fas fa-hammer text-2xl text-blue-500"></i>
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900">Product Design and Development Engineer Intern</h3>
+              </div>
+              <div class="flex items-center space-x-2 mb-4">
+                <img src="https://i.imgur.com/wA1GrbP.png" alt="Manufast logo" class="w-6 h-6 rounded-sm object-contain">
+                <p class="text-sm text-gray-600">Manufast.in, India | July 2022 – June 2023</p>
+              </div>
+              <ul class="list-disc list-inside mt-2 text-gray-700 text-base space-y-2 leading-relaxed">
+                <li>Led optimization initiatives that cut material usage by 15%, enhancing both cost efficiency and sustainability.</li>
+                <li>Validated 20+ redesigned components through tolerance stack-up and FEA analysis, reducing defect rate by 10%.</li>
+                <li>Improved production workflows by redesigning jigs and fixtures, reducing assembly time by 20%.</li>
+                <li>Collaborated with suppliers to address design-for-manufacturing challenges and ensure dimensional consistency.</li>
+                <li>Created detailed 3D models and GD&T drawings using SolidWorks and Creo, ensuring ISO-compliant documentation.</li>
+                <li>Assisted in prototype testing and performance validation to verify design intent prior to mass production.</li>
+                <li>Documented engineering changes and supported the implementation of continuous improvement processes.</li>
+                <li>Presented findings to senior engineers, contributing to data-driven product quality enhancements of 30%.</li>
+              </ul>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="experience-card bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-opacity duration-300 opacity-0 group-hover:opacity-70 hover:opacity-100">
+              <div class="flex items-center space-x-3 mb-3">
+                <i class="fas fa-flask text-2xl text-green-500"></i>
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-900">R&D and Digging System Head</h3>
+              </div>
+              <div class="flex items-center space-x-2 mb-4">
+                <img src="https://i.imgur.com/tlKr503.png" alt="Team MechAgrinics logo" class="w-6 h-6 rounded-sm object-contain">
+                <p class="text-sm text-gray-600">Team MechAgrinics, India | Jun 2019 – Jun 2022</p>
+              </div>
+              <ul class="list-disc list-inside mt-2 text-gray-700 text-base space-y-2 leading-relaxed">
+                <li>Led the R&D team for an autonomous onion harvester from concept to prototype, integrating mechanical and control systems.</li>
+                <li>Engineered the digging mechanism for diverse soil conditions, improving field adaptability and traction by 15%.</li>
+                <li>Automated digging and lifting functions through chain–sprocket and hydraulic systems, reducing manual labor by 20%.</li>
+                <li>Directed a 15-member interdisciplinary team handling CAD design, simulation, fabrication, and testing phases.</li>
+                <li>Performed structural and stress analysis using ANSYS to validate the frame under field-load conditions.</li>
+                <li>Optimized the weight-to-strength ratio and transmission system, improving efficiency and stability on rough terrain.</li>
+                <li>Presented at national-level competitions, securing AIR 5 and winning the “Best Design Award.”</li>
+                <li>Collaborated with mentors to align system performance goals with real-world agricultural challenges.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    <!-- Projects Section --> 
+      <section id="projects" data-page="projects" class="content-section py-20 opacity-0">
+  <div class="container mx-auto px-4 py-8 md:py-12">
+
+    <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900">
+      PROJECTS
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-10">
+
+      <!-- Project 1 -->
+      <div class="bg-gray-100 rounded-xl shadow-xl p-6 hover:shadow-2xl transition duration-300">
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+          Suspension and Steering Subsystem Simulation
+        </h3>
+
+        <p class="text-sm text-gray-600 mb-4">
+          Clemson University | Jan 2025 – May 2025
+        </p>
+
+        <div class="flex flex-col md:flex-row md:space-x-6">
+
+          <div class="md:w-1/2 mb-4 md:mb-0">
+            <img
+              src="https://i.imgur.com/4OoevVr.jpeg"
+              alt="Suspension and steering CAD model"
+              class="rounded-lg shadow-lg w-full h-auto"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="md:w-1/2">
+            <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base">
+              <li>Developed a front suspension model and steering linkages in SolidWorks.</li>
+              <li>Validated designs through kinematic and load transfer analysis.</li>
+              <li>Performed DOE-based sensitivity analysis to improve stability and ride comfort.</li>
+            </ul>
+
+            <p class="mt-3 text-sm text-gray-600">
+              <strong>Tools:</strong> SolidWorks, DOE, Kinematic Analysis
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-gray-100 rounded-xl shadow-xl p-6 hover:shadow-2xl transition duration-300">
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+          Lightweight Chassis Design and Optimization Study
+        </h3>
+
+        <p class="text-sm text-gray-600 mb-4">
+          Clemson University | Aug 2024 – Dec 2024
+        </p>
+
+        <div class="flex flex-col md:flex-row md:space-x-6">
+
+          <div class="md:w-1/2 mb-4 md:mb-0">
+            <img
+              src="https://i.imgur.com/mP8rrd8.jpeg"
+              alt="Chassis FEA and optimization"
+              class="rounded-lg shadow-lg w-full h-auto"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="md:w-1/2">
+            <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base">
+              <li>Designed a full vehicle frame optimized for stiffness-to-weight ratio.</li>
+              <li>Performed FEA and modal analysis to validate safety factors.</li>
+              <li>Achieved 14% mass reduction while maintaining structural integrity.</li>
+            </ul>
+
+            <p class="mt-3 text-sm text-gray-600">
+              <strong>Tools:</strong> ANSYS, SolidWorks, FEA, Modal Analysis
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-gray-100 rounded-xl shadow-xl p-6 hover:shadow-2xl transition duration-300">
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+          Autonomous 360° Fire Extinguisher Robot
+        </h3>
+
+        <p class="text-sm text-gray-600 mb-4">
+          Savitribai Phule Pune University | Aug 2021 – Jun 2022
+        </p>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base">
+          <li>Designed and built an autonomous fire extinguishing robot.</li>
+          <li>Integrated a 360-degree suppression system for all-angle response.</li>
+          <li>Reduced emergency response time by 25% through optimized layout.</li>
+        </ul>
+
+        <p class="mt-3 text-sm text-gray-600">
+          <strong>Tools:</strong> CAD Design, Prototyping, Mechanical Integration
+        </p>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="bg-gray-100 rounded-xl shadow-xl p-6 hover:shadow-2xl transition duration-300">
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-2">
+          Hydraulic Lift and Drop Arm
+        </h3>
+
+        <p class="text-sm text-gray-600 mb-4">
+          Savitribai Phule Pune University | Aug 2018 – Jun 2019
+        </p>
+
+        <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm sm:text-base">
+          <li>Developed a hydraulic lift mechanism for heavy-load handling.</li>
+          <li>Reduced manual handling time by 30%.</li>
+          <li>Improved operational safety and reliability.</li>
+        </ul>
+
+        <p class="mt-3 text-sm text-gray-600">
+          <strong>Tools:</strong> Hydraulic Systems, Stress Analysis, Fabrication
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      
+      </section> <!-- Contact Section --> 
+      <section id="contact" data-page="contact" class="content-section py-6 opacity-0">  
+        <div class="container mx-auto px-4 py-4 md:py-6"> 
+          <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4 sm:mb-6 text-gray-900">CONTACT ME</h2>             
+          <div class="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-6 mb-6">     
+            <a href="mailto:swapniljoshi657@gmail.com" class="p-6 bg-gray-100 rounded-2xl text-center hover:bg-gray-200 transition w-full sm:w-72 flex flex-col items-center justify-center">     
+              <div class="mb-2 text-2xl text-blue-500">       
+                <i class="fas fa-envelope"></i>     
+              </div>     
+              <h3 class="text-lg font-semibold text-gray-900">Email</h3>         
+              <p class="text-gray-600 break-words">swapniljoshi657@gmail.com</p>   
+            </a>     
+            <a href="https://linkedin.com/in/swapniljoshi31" target="_blank" class="p-6 bg-gray-100 rounded-2xl text-center hover:bg-gray-200 transition w-full sm:w-72 flex flex-col items-center justify-center">     
+              <div class="mb-2 text-2xl text-blue-500">      
+                <i class="fab fa-linkedin"></i>     
+              </div>     
+              <h3 class="text-lg font-semibold text-gray-900">LinkedIn</h3>         
+              <p class="text-gray-600 break-words">linkedin.com/in/swapniljoshi31</p>   </a> 
+          </div>         
+          <div class="flex items-center justify-center my-3">       
+            <div class="h-px bg-gray-300 flex-grow">
+            </div>       
+            <span class="px-4 text-gray-600 font-medium">OR</span>       
+            <div class="h-px bg-gray-300 flex-grow"></div>     
+          </div> 
+          <div class="flex flex-col md:flex-row md:gap-12 justify-center items-start space-y-8 md:space-y-0"> 
+            <div class="md:w-1/2 text-left"> 
+              <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 uppercase"> CONTACT ME DIRECTLY > </h2> 
+            </div> <form action="https://formspree.io/f/xeordqqo" method="POST" class="w-full md:w-1/2 space-y-4"> 
+              <div class="flex space-x-4"> 
+                <div class="w-1/2"> 
+                  <label for="first-name" class="block text-sm font-medium text-gray-700">First Name <span class="text-red-500">*</span></label> 
+                  <input type="text" id="first-name" name="first-name" required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none"> </div> 
+                <div class="w-1/2"> 
+                  <label for="last-name" class="block text-sm font-medium text-gray-700">Last Name <span class="text-red-500">*</span></label> 
+                  <input type="text" id="last-name" name="last-name" required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none"> </div> 
+              </div> 
+              <div> 
+                <label for="email" class="block text-sm font-medium text-gray-700">Email <span class="text-red-500">*</span></label> 
+                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none"> </div> 
+              <div> 
+                <label for="message" class="block text-sm font-medium text-gray-700">Message <span class="text-red-500">*</span></label> 
+                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-900 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea> </div> 
+              <button type="submit" class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition-colors duration-300"> Send </button> </form> 
+          </div>   
+        </div> 
+      </section>
+    </div> 
+  </main>
+      
     </div>
   </main>
 
@@ -155,7 +399,6 @@
     const contentPagesContainer = document.getElementById('content-pages');
     const homeSection = document.getElementById('home');
     const contentPages = document.querySelectorAll('#content-pages .content-section');
-    const STAGGER_DELAY_MS = 400;
 
     function showPage(pageId, shouldUpdateHistory = true) {
       const targetId = pageId === 'home' ? 'home' : pageId;
@@ -194,14 +437,11 @@
           text.style.animationPlayState = 'running';
         }
 
+        /* ✅ Simple fade-in for experience section */
         if (pageId === 'experience') {
           const animated = targetPage.querySelectorAll('.experience-card');
-          animated.forEach((el, index) => {
-            const delay = index * STAGGER_DELAY_MS;
-            setTimeout(() => {
-              void el.offsetWidth;
-              el.classList.add('animate-fade-in');
-            }, delay);
+          animated.forEach(el => {
+            el.classList.add('animate-fade-in');
           });
         }
 
